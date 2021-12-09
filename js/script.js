@@ -75,6 +75,79 @@ function populateData2(weeklyWeatherData) {
             var iconMainUrl = "http://openweathermap.org/img/w/" + weatherIconCode + ".png"; //we then make a url using the icon code that we get from the previous variable
             day1WeatherIcon.src = iconMainUrl //finally we assign the url to the src of our weather icon html element 
 
+        } if ( i ===2 ){
+            var date = document.getElementById("date2");
+            var date2 = moment.unix(weeklyWeatherData.daily[i].dt).format("DD/MM/YY");
+            console.log('moment', date2)
+            date.innerHTML = date2
+            var day2Temp = document.getElementById("weatherTemp2");
+            day2Temp.innerText = weeklyWeatherData.daily[i].temp.day
+            var day2Wind = document.getElementById("windspeed2");
+            day2Wind.innerText = weeklyWeatherData.daily[i].wind_speed
+            var day2Humidity = document.getElementById("humidity2");
+            day2Humidity.innerText = weeklyWeatherData.daily[i].humidity
+            var day2WeatherIcon = document.getElementById('weatherIcon2');
+
+            var weatherIconCode2 = weeklyWeatherData.daily[i].weather[0].icon //here we make a variable and set it to have the icon code of the current weather
+            // console.log('icon', weatherIconCode)
+            var iconMainUrl2 = "http://openweathermap.org/img/w/" + weatherIconCode2 + ".png"; //we then make a url using the icon code that we get from the previous variable
+            day2WeatherIcon.src = iconMainUrl2 //f
+            
+
+        } if (i ===3 ) {
+            var date = document.getElementById("date3");
+            var date3 = moment.unix(weeklyWeatherData.daily[i].dt).format("DD/MM/YY");
+            console.log('moment', date3)
+            date.innerHTML = date3
+            var day3Temp = document.getElementById("weatherTemp3");
+            day3Temp.innerText = weeklyWeatherData.daily[i].temp.day
+            var day3Wind = document.getElementById("windspeed3");
+            day3Wind.innerText = weeklyWeatherData.daily[i].wind_speed
+            var day3Humidity = document.getElementById("humidity3");
+            day3Humidity.innerText = weeklyWeatherData.daily[i].humidity
+            var day3WeatherIcon = document.getElementById('weatherIcon3');
+
+            var weatherIconCode3 = weeklyWeatherData.daily[i].weather[0].icon //here we make a variable and set it to have the icon code of the current weather
+            // console.log('icon', weatherIconCode)
+            var iconMainUrl3 = "http://openweathermap.org/img/w/" + weatherIconCode3 + ".png"; //we then make a url using the icon code that we get from the previous variable
+            day3WeatherIcon.src = iconMainUrl3 //f
+
+        } if ( i ===4 ) {
+            var date = document.getElementById("date4");
+            var date4 = moment.unix(weeklyWeatherData.daily[i].dt).format("DD/MM/YY");
+            console.log('moment', date4)
+            date.innerHTML = date4
+            var day4Temp = document.getElementById("weatherTemp4");
+            day4Temp.innerText = weeklyWeatherData.daily[i].temp.day
+            var day4Wind = document.getElementById("windspeed4");
+            day4Wind.innerText = weeklyWeatherData.daily[i].wind_speed
+            var day4Humidity = document.getElementById("humidity4");
+            day4Humidity.innerText = weeklyWeatherData.daily[i].humidity
+            var day4WeatherIcon = document.getElementById('weatherIcon4');
+
+            var weatherIconCode4 = weeklyWeatherData.daily[i].weather[0].icon //here we make a variable and set it to have the icon code of the current weather
+            // console.log('icon', weatherIconCode)
+            var iconMainUrl4 = "http://openweathermap.org/img/w/" + weatherIconCode4 + ".png"; //we then make a url using the icon code that we get from the previous variable
+            day4WeatherIcon.src = iconMainUrl4 //f
+
+        } if ( i ===5 ) {
+            var date = document.getElementById("date5");
+            var date5 = moment.unix(weeklyWeatherData.daily[i].dt).format("DD/MM/YY");
+            console.log('moment', date5)
+            date.innerHTML = date5
+            var day5Temp = document.getElementById("weatherTemp5");
+            day5Temp.innerText = weeklyWeatherData.daily[i].temp.day
+            var day5Wind = document.getElementById("windspeed5");
+            day5Wind.innerText = weeklyWeatherData.daily[i].wind_speed
+            var day5Humidity = document.getElementById("humidity5");
+            day5Humidity.innerText = weeklyWeatherData.daily[i].humidity
+            var day5WeatherIcon = document.getElementById('weatherIcon5');
+
+            var weatherIconCode5 = weeklyWeatherData.daily[i].weather[0].icon //here we make a variable and set it to have the icon code of the current weather
+            // console.log('icon', weatherIconCode)
+            var iconMainUrl5 = "http://openweathermap.org/img/w/" + weatherIconCode5 + ".png"; //we then make a url using the icon code that we get from the previous variable
+            day5WeatherIcon.src = iconMainUrl5 //f
+
         }
 
     }
