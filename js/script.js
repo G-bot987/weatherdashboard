@@ -56,8 +56,12 @@ function populateData2(weeklyWeatherData) {
             } else {
                 document.getElementById("UV").style.color = "red";
             }
+        } if (i === 1){
+            var day1Temp = document.getElementById("weatherTemp1");
+            day1Temp.innerText = weeklyWeatherData.daily[i].temp.day
+
         }
-        
+
     }
 }
 
