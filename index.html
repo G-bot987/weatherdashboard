@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="citySearch">search your location</label>
+        <input type="text" placeholder="Location Search" id="searchBox" name="searchBox">
+
+        <input type="submit" class="submitstyle" value="Search">
+
+    </form>
+    <script src="js/script.js"></script>
+
+
+    <div class="ui grid" id="weatherDiv">
+        <h2>This is the weather for <span id=city></span></h2>
+        <div id="weatherTempDiv" class="five wide column invisible text-bold">Temp: <span id="weatherTemp"></span>°C</div>
+        <div id="weatherConditionDiv" class="five wide column invisible text-bold">Weather Condition: <span id="weatherCondition"></span></div>
+        <div class="six wide column"><img class="hidden" src="" alt="an image of the current weather conditions" id="weatherIcon"></div>
+
+      </div>
+</body>
+</html>
