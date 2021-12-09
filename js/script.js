@@ -1,10 +1,7 @@
 var searchFormEl = document.querySelector("form")
 var citySearchEl = document.querySelector("#searchBox")
 var apiKey = '36d99a174e74311a981b59e36fa298f7'
-var weatherConditionEL = document.getElementById('weatherCondition'); //we get the span element that lists our weather conditions in our html
-var weatherIconEL = document.getElementById('weatherIcon'); //we get the element that lists the weather icon in our html
-var weatherTempDivEL = document.getElementById('weatherTempDiv'); //This element contains the span of the temp element 
-var weatherConditionDivEL = document.getElementById('weatherConditionDiv');
+
 
 // url endpoint for city
 
@@ -31,8 +28,9 @@ function MakeRequest (endpoint) {
             .then(function(weatherData) {
                 var weatherTempEL = document.getElementById('weatherTemp'); //We get the span element that lists our weather temperature in our html
                 var humidityTempEl = document.getElementById('humidity');
-               
-
+                var windTempEl = document.getElementById('wind'); 
+                var weatherIconEL = document.getElementById('weatherIcon');
+                var cityEl = document.getElementById('city');
                 // dummy weather data {"coord":{"lon":-0.1257,"lat":51.5085},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":7.53,"feels_like":4.05,"temp_min":6.42,"temp_max":8.96,"pressure":1002,"humidity":72},"visibility":10000,"wind":{"speed":6.17,"deg":250},"clouds":{"all":92},"dt":1639054835,"sys":{"type":2,"id":2019646,"country":"GB","sunrise":1639036450,"sunset":1639065114},"timezone":0,"id":2643743,"name":"London","cod":200}
             //    desired data an icon representation of weather conditions, DONE 
             // the temperature, DONE 
@@ -44,19 +42,19 @@ function MakeRequest (endpoint) {
             // weatherConditionEL.innerText = weatherData.list[0].weather[0].main
             // temp from main
 
-            console.log('weatherdata', weatherData.main.humidity)
+            console.log('weatherdata', weatherData.weather[0].icon)
             
             weatherTempEL.innerText = weatherData.main.temp
-
             humidityTempEl.innerText = weatherData.main.humidity
-                windspeedEl.innerText = weatherData.list[0].wind.speed
+            
+            windTempEl.innerText = weatherData.wind.speed
 
 // 2nd api call needed to get uv and rest of week data https://api.openweathermap.org/data/2.5/onecall?lat=51.5085&lon=-0.1257&exclude=minutely,hourly,alerts&units=metric&appid=36d99a174e74311a981b59e36fa298f7
 // uvEl.innerText = weatherData.list[0].
 
 
             // this for icon 
-            var weatherIconCode = weatherData.list[0].weather[0].icon //here we make a variable and set it to have the icon code of the current weather
+            var weatherIconCode = weatherData.weather[0].icon //here we make a variable and set it to have the icon code of the current weather
             var iconMainUrl = "http://openweathermap.org/img/w/" + weatherIconCode + ".png"; //we then make a url using the icon code that we get from the previous variable
             weatherIconEL.src = iconMainUrl //finally we assign the url to the src of our weather icon html element 
         
@@ -66,7 +64,7 @@ function MakeRequest (endpoint) {
             // weatherIconEL.classList.remove('hidden')
 
             //this code takes the city name of our weather data and assigns it to the inner text of yourCity. This means in the weather div it will show the user the location they are viewing for
-            yourCity.innerText = weatherData.city.name
+            cityEl.innerText = citySearchEl.value
            
             })
       
