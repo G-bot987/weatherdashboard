@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
 <body>
     <form>
@@ -29,7 +30,8 @@
     <div class="5DayWeatherCards">
         <br>
         <section id="day1">
-            <h3> tomorrow </h3>
+            
+            <div id="dateDay1" class="five wide column invisible text-bold">Date: <span id="date1"></span></div>
             <div id="weatherTempDivDay1" class="five wide column invisible text-bold">Temp: <span id="weatherTemp1"></span>°C</div>
             <div id="weatherWindDivDay1" class="five wide column invisible text-bold">windspeed: <span id="windspeed1"></span></div>
             <div id="weatherHumidityDivDay1" class="five wide column invisible text-bold">humidity: <span id="humidity1"></span></div>

@@ -57,6 +57,11 @@ function populateData2(weeklyWeatherData) {
                 document.getElementById("UV").style.color = "red";
             }
         } if (i === 1){
+            // console.log("date data", weeklyWeatherData.daily[i].dt)
+            var date = document.getElementById("date1");
+            var date1 = moment.unix(weeklyWeatherData.daily[i].dt).format("DD/MM/YY");
+            console.log('moment', date1)
+            date.innerHTML = date1
             var day1Temp = document.getElementById("weatherTemp1");
             day1Temp.innerText = weeklyWeatherData.daily[i].temp.day
             var day1Wind = document.getElementById("windspeed1");
