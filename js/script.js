@@ -59,6 +59,16 @@ function populateData2(weeklyWeatherData) {
         } if (i === 1){
             var day1Temp = document.getElementById("weatherTemp1");
             day1Temp.innerText = weeklyWeatherData.daily[i].temp.day
+            var day1Wind = document.getElementById("windspeed1");
+            day1Wind.innerText = weeklyWeatherData.daily[i].wind_speed
+            var day1Humidity = document.getElementById("humidity1");
+            day1Humidity.innerText = weeklyWeatherData.daily[i].humidity
+            var day1WeatherIcon = document.getElementById('weatherIcon1');
+
+            var weatherIconCode = weeklyWeatherData.daily[i].weather[0].icon //here we make a variable and set it to have the icon code of the current weather
+            // console.log('icon', weatherIconCode)
+            var iconMainUrl = "http://openweathermap.org/img/w/" + weatherIconCode + ".png"; //we then make a url using the icon code that we get from the previous variable
+            day1WeatherIcon.src = iconMainUrl //finally we assign the url to the src of our weather icon html element 
 
         }
 
