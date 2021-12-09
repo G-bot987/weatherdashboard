@@ -43,6 +43,18 @@ function populateData(weatherData) {
     cityEl.innerText = citySearchEl.value
 }
 
+
+function populateData2(weeklyWeatherData) {
+    console.log('test', weeklyWeatherData)
+    var weeklyWeatherData = weeklyWeatherData
+    for(var i=0; i <6; i++){
+        if (i === 0){
+            var uvTag = document.getElementById('UV');
+            uvTag.innerText = weeklyWeatherData.daily[i].uvi
+        }
+    }
+}
+
 // make request
 function MakeRequest (endpoint) {
     console.log('endpoint', endpoint)
@@ -71,6 +83,8 @@ function MakeRequest (endpoint) {
                                 res.json()
                                 .then(function(weeklyWeatherData) {
                                     console.log('weekly weather data', weeklyWeatherData)
+                                    populateData2(weeklyWeatherData);
+
                                 })
                             }
                         })
@@ -93,11 +107,7 @@ function MakeRequest (endpoint) {
 }
 
 
-function restofweekweather(){
-    
-    // 2nd api call needed to get uv and rest of week data https://api.openweathermap.org/data/2.5/onecall?lat=51.5085&lon=-0.1257&exclude=minutely,hourly,alerts&units=metric&appid=36d99a174e74311a981b59e36fa298f7
-    
-}
+
 
 
 // on click
