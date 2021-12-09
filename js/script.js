@@ -51,7 +51,13 @@ function populateData2(weeklyWeatherData) {
         if (i === 0){
             var uvTag = document.getElementById('UV');
             uvTag.innerText = weeklyWeatherData.daily[i].uvi
+            if(weeklyWeatherData.daily[i].uvi <2){
+                document.getElementById("UV").style.color = "green";
+            } else {
+                document.getElementById("UV").style.color = "red";
+            }
         }
+        
     }
 }
 
